@@ -34,11 +34,20 @@ test('ShoppingCart#total returns zero without items', (t) => {
   t.end();
 });
 
-test('ShoppingCart#total returns the amount with one or more items', (t) => {
+test('ShoppingCart#total returns the amount of items with quantity equal 1', (t) => {
   let cart = new ShoppingCart();
-  cart.add({ price: 4.0 });
-  cart.add({ price: 5.5 });
-  cart.add({ price: 6.8 });
+  cart.add({ price: 4.0, quantity: 1 });
+  cart.add({ price: 5.5, quantity: 1 });
+  cart.add({ price: 6.8, quantity: 1 });
   t.equal(cart.total(), 16.3);
+  t.end();
+});
+
+test('ShoppingCart#total returns the amount of items with different quantities', (t) => {
+  let cart = new ShoppingCart();
+  cart.add({ price: 4.0, quantity: 1 });
+  cart.add({ price: 5.5, quantity: 11 });
+  cart.add({ price: 6.8, quantity: 3 });
+  t.equal(cart.total(), 84.9);
   t.end();
 });
