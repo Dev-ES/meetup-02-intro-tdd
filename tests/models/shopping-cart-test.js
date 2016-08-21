@@ -51,3 +51,27 @@ test('ShoppingCart#total returns the amount of items with different quantities',
   t.equal(cart.total(), 84.9);
   t.end();
 });
+
+test('ShoppingCart#remove does nothing when items are not present', (t) => {
+  let cart = new ShoppingCart();
+  cart.remove('ketchup');
+  t.equal(cart.items.length, 0);
+  t.end();
+});
+
+test('ShoppingCart#remove does nothing when name given is not present', (t) => {
+  let cart = new ShoppingCart();
+  cart.add({ name: 'chocolate' });
+  cart.remove('ketchup');
+  t.equal(cart.items.length, 1);
+  t.end();
+});
+
+test('ShoppingCart#remove removes item when name given is present', (t) => {
+  let cart = new ShoppingCart();
+  cart.add({ name: 'chocolate' });
+  cart.add({ name: 'ketchup' });
+  cart.remove('chocolate');
+  t.equal(cart.items.length, 1);
+  t.end();
+});
