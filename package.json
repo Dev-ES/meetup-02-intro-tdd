@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/**/*.js"
+    "test": "tape tests/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "tape": "^4.6.0"
-  }
+  },
+  "devDependencies": {}
 }
