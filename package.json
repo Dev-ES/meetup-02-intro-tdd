@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/*.js"
+    "test": "tape tests/*.js | tap-colorize"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,7 @@
   "dependencies": {
     "tape": "^4.6.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "tap-colorize": "^1.2.0"
+  }
 }
