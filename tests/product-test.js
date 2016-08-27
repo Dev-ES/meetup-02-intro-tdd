@@ -1,5 +1,5 @@
 const test = require('tape');
-const Product = require('../../lib/models/product');
+const Product = require('../lib/product');
 
 test('Product instantiates a new product', (t) => {
   let product = new Product();

@@ -1,5 +1,5 @@
 const test = require('tape');
-const ShoppingCart = require('../../lib/models/shopping-cart');
+const ShoppingCart = require('../lib/shopping-cart');
 
 test('ShoppingCart instantiates a new shopping cart', (t) => {
   t.plan(2);
